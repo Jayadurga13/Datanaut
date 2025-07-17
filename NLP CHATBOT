@@ -1,0 +1,32 @@
+responses = {
+    "hi": "Hello! How can I help you?",
+    "hello": "Hi there! What can I do for you?",
+    "how are you": "I'm just a bot, but I'm doing fine!",
+    "your name": "I'm a simple Python chatbot!",
+    "what do you do": "I help you with basic queries using Python!",
+    "bye": "Goodbye! Have a nice day!",
+    "thanks": "You're welcome!",
+    "credit card": "We accept most major credit cards and PayPal.",
+    "coffee": "We have coffee and tea.",
+    "help": "Sure, I'm here to assist you. Ask me anything!",
+}
+
+def chatbot():
+    print("Let's chat! Type 'quit' to exit.")
+    while True:
+        user_input = input("You: ").lower()
+        if user_input == "quit":
+            print("Bot: Goodbye!")
+            break
+
+        response_found = False
+        for key in responses:
+            if key in user_input:
+                print("Bot:", responses[key])
+                response_found = True
+                break
+
+        if not response_found:
+            print("Bot: I'm not sure how to respond to that.")
+
+chatbot()
